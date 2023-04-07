@@ -1,0 +1,47 @@
+x{
+    "FUAR_SignalVoidDpCollectible1Title": {
+        "English": "Hibernia Communications Update"
+    },
+
+    "FUAR_SignalVoidDpCollectible1Desc": {
+        "English": "A dusty printed memo intended for Hibernia staff."
+    },
+
+    "FUAR_SignalVoidDpCollectible1Text":{
+        "English": "As you all know, communication with the lighthouse and our/any ships has been lackluster these last few years. Ever since the Riken ended up on the rocks we've been losing business. \n\nSo we finally got the technicians to come in and repair the our communication relay. The lighthouse workers and anyone on our crew should now be equipped with handheld radios to ensure communication remains between each of us at all times to prevent any events like last summer's. \n\nThose of you who've already picked up your communications gear may notice some interference patterns around the lower coast. I sent John out up the road on a routine run to Quincy's to check it out. If it gets worse and is impacting any at-sea activity, please let one of us know. \n\nRegards, \nRichard Brown \nHibernia On-Site Operations Supervisor"
+    },
+
+    "FUAR_SignalVoidPvCollectible1Title":{
+        "English": "Equipment Notice"
+    },
+
+    "FUAR_SignalVoidPvCollectible1Desc":{
+        "English": "A handwritten note taped to communications equipment by the radio operator at Signal Hill."
+    },
+
+    "FUAR_SignalVoidPvCollectible1Text":{
+        "English": "PLEASE READ ME \n\nThis is intended for whoever comes after me. I'm locking up the shack, but leaving this here. If you get the equipment up and running, you might hear some strange signals on ----- frequencies, they seem to be on an interval. The tower is old and the box is janky, so I can't pinpoint their source. But the signal peaks towards the southeast side of the valley. I originally thought it could be activity at Blackrock, or in the interior mountains. But the signal is faint, there's no way it can come from there. It must be somewhere in the valley. I just haven't found where. If you are able to find out whatever's transmitting that signal and shut it off, you're definitely cut out for this job. \n\n Good luck. \n\n-Sarah"
+    },
+    "FUAR_SignalVoidMlCollectible1Title":{
+        "English": "Journal Entry #17"
+    },
+
+    "FUAR_SignalVoidMlCollectible1Desc":{
+        "English": "An old journal entry from a Mystery Lake Provincial Park ranger."
+    },
+
+    "FUAR_SignalVoidMlCollectible1Text":{
+        "English": "September 14th 2005 \n\nMade my rounds around the park today, fewer and fewer tourists and campers come out to the lake this season. And the other lookouts don't talk much. I don't mind it one bit. \n\nI did hike up to the other lookout the other day to ask about the radio tower, been hearing some weird noises on my radio while out on patrol. They seem to get louder near the Carter Dam but that place has been shut down for years. Could be coming from out in Pleasant Valley. I might take a day and hike out there to check it out."
+    },
+    "FUAR_SignalVoidBrCollectible1Title":{
+        "English": "Blackrock Security Memo"
+    },
+
+    "FUAR_SignalVoidBrCollectible1Desc":{
+        "English": "A printed memo intended for Blackrock Security."
+    },
+
+    "FUAR_SignalVoidBrCollectible1Text":{
+        "English": "From: chrism@blackrockcorrections.com \nTo: blackrocksecuritygroup@blackrockcorrections.com, franklinw@blackrockcorrections.com \nSubject: Security Memo \n\nHello, this message is intended for all Blackrock Security Personnel. \n\nOn behalf of Warden Franklin, this is a reminder that while on duty, all corrections officers are expected to be reachable via radio at all times. Especially if they are on patrol or not on prison grounds. We've recently had new communications equipment installed and new designated handheld radios will be distributed on Monday. \n\nAdditionally, all Blackrock security vehicles will be equipped with a shortwave radio for long-range communication back to the penetentiary. \n\nOur communications team has been testing the new equipment throughout the week and have noticed some irregular signals on frequency. All signs point to these signals coming from Pleasant Valley and somewhere along the coast. If any security personnel encounters these interferences while on patrol, they are to report the occurrences to myself or anyone in the security department or technical administration. They may pose a threat to communications around the penetentiary and we will continue to monitor this phenomenon and provide updates so we can ensure communications among staff remain safe, secure and not hindered. \n\nThank you for your understanding, \nChris Marshall \nChief of Security - Blackrock Federal Penetentiary"
+    },
+}

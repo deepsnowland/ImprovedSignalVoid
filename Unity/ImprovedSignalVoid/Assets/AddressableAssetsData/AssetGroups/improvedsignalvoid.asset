@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: improvedsignalvoid
+  m_EditorClassIdentifier: 
+  m_GroupName: improvedsignalvoid
+  m_Data:
+    m_SerializedData: []
+  m_GUID: ca702e7e048735043b27696c2275aa36
+  m_SerializeEntries:
+  - m_GUID: 6c1d0c7975c28d04596cdacf2d767422
+    m_Address: ico_GearItem__SignalVoidBrCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 389fd98961da68a448fef3b23c6c06d0
+    m_Address: ico_GearItem__SignalVoidDpCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1b90b98d69af7a14dac7e29f598a8c8a
+    m_Address: ico_GearItem__SignalVoidMlCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cd3e4b9620f6c3f45966354569dc2389
+    m_Address: ico_GearItem__SignalVoidPvCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 85c9b21964ae0554fa8046ffedca0f36
+    m_Address: GEAR_SignalVoidPvCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8298206929bf07841a5407cfa3fce1a9
+    m_Address: GEAR_SignalVoidMlCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c56c032e025ecc4ba6d4ee0f1383b03
+    m_Address: GEAR_SignalVoidDpCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 261adc4c50ec9814c824fe2f2426895d
+    m_Address: GEAR_SignalVoidBrCollectible1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 023170d73ec24de4da0fbd6e1fcf4d6f, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 34b533de4751f3d44b473db488a33579, type: 2}
+    - {fileID: 11400000, guid: 51002565b4ee67043aa2fcec17e55cfa, type: 2}

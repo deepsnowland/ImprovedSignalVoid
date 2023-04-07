@@ -9,11 +9,49 @@ using Il2Cpp;
 using System.Reflection;
 using ModSettings;
 using UnityEngine;
+using Il2CppParadoxNotion.Services;
+using Il2CppNodeCanvas.Tasks.Conditions;
+using Il2CppMissionTypes;
 
 namespace ImprovedSignalVoid
 {
     internal class MissionPatches
     {
+
+        [HarmonyPatch(typeof(SaveGameSystem), nameof(SaveGameSystem.LoadSceneData))]
+
+        internal class InventoryCheckOverride
+        {
+
+            public static void Postfix()
+            {
+
+                GameObject pvPrefab = GameObject.Find("GEAR_SignalVoidPvCollectible1");
+                GameObject sideTale1 = GameObject.Find("sideTale1");
+
+                if(sideTale1 != null)
+                {
+                    MessageRouter msgRouter = sideTale1.GetComponent<MessageRouter>();
+
+                    if (msgRouter.listeners.ContainsKey("OnCustomEvent"))
+                    {
+                        Il2CppSystem.Collections.Generic.List<Il2CppSystem.Object> list = msgRouter.listeners["OnCustomEvent"];
+                        Condition_PlayerHasInventoryItems condition = (Condition_PlayerHasInventoryItems)list[0];
+                        Il2CppSystem.Collections.Generic.List<InventoryItemRequirement> invReqs = condition.requirementsDict["_std"];
+                        InventoryItemRequirement itemReq = invReqs[0];
+                        itemReq.item = pvPrefab.GetComponent<GearItem>();
+                        itemReq.name = "GEAR_SignalVoidPvCollectible1";
+                    }
+
+                }
+                else
+                {
+                    MelonLogger.Msg("Unable to find sideTale1");
+                }
+
+            }
+
+        }
 
         [HarmonyPatch(typeof(Panel_Log), nameof(Panel_Log.Update))]
 

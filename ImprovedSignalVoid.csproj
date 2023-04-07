@@ -24,6 +24,12 @@
 		<DebugType>embedded</DebugType>
 	</PropertyGroup>
 
+	<ItemGroup>
+	  <Compile Remove="Unity\**" />
+	  <EmbeddedResource Remove="Unity\**" />
+	  <None Remove="Unity\**" />
+	</ItemGroup>
+
 
 	<!--This is the of packages that the mod references.-->
 	<ItemGroup>

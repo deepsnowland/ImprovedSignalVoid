@@ -1,0 +1,6 @@
+scene=LakeRegion
+
+item=GEAR_SignalVoidPvCollectible1 p=1016.8243,26.4147,444.3204 r=-0.0000,0.4277,-0.0000 c=100
+item=GEAR_SignalVoidDpCollectible1 p=1017.5627,26.4147,444.3707 r=-0.0000,0.4571,-0.0000 c=100
+item=GEAR_SignalVoidMlCollectible1 p=1018.2101,26.4147,444.3501 r=-0.0000,0.4136,-0.0000 c=100
+item=GEAR_SignalVoidBrCollectible1 p=1020.1627,26.4147,444.2446 r=-0.0000,1.1832,-0.0000 c=100
