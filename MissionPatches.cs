@@ -43,12 +43,19 @@ namespace ImprovedSignalVoid
 
                     if (msgRouter.listeners.ContainsKey("OnCustomEvent"))
                     {
-                        Il2CppSystem.Collections.Generic.List<Il2CppSystem.Object> list = msgRouter.listeners["OnCustomEvent"];
+                        var list = msgRouter.listeners["OnCustomEvent"];
 
-                        Condition_PlayerHasInventoryItems condition = (Condition_PlayerHasInventoryItems)list[0];
+                        Condition_PlayerHasInventoryItems condition = list[0].Cast<Condition_PlayerHasInventoryItems>();
                         MelonLogger.Msg("Has inventory item condition is: {0}", condition);
+
                         condition.requirementsDict["_std"][0].item = pvPrefab.GetComponent<GearItem>();
                         condition.requirementsDict["_std"][0].name = "GEAR_SignalVoidPvCollectible1";
+
+                        MelonLogger.Msg("New item: {0}", condition.requirementsDict["_std"][0].item);
+                        MelonLogger.Msg("New item name: {0}", condition.requirementsDict["_std"][0].name);
+
+
+
                     }
                     else
                     {
