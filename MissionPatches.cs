@@ -26,8 +26,6 @@ namespace ImprovedSignalVoid
             public static void Postfix()
             {
 
-
-                GameObject pvPrefab = GameObject.Find("GEAR_SignalVoidPvCollectible1");
                 GameObject sideTale1 = GameObject.Find("sideTale1");
 
                 if(sideTale1 != null)
@@ -46,14 +44,9 @@ namespace ImprovedSignalVoid
                         var list = msgRouter.listeners["OnCustomEvent"];
 
                         Condition_PlayerHasInventoryItems condition = list[0].Cast<Condition_PlayerHasInventoryItems>();
-                        MelonLogger.Msg("Has inventory item condition is: {0}", condition);
 
-                        condition.requirementsDict["_std"][0].item = pvPrefab.GetComponent<GearItem>();
+                       // condition.requirementsDict["_std"][0].item = pvPrefab.GetComponent<GearItem>();
                         condition.requirementsDict["_std"][0].name = "GEAR_SignalVoidPvCollectible1";
-
-                        MelonLogger.Msg("New item: {0}", condition.requirementsDict["_std"][0].item);
-                        MelonLogger.Msg("New item name: {0}", condition.requirementsDict["_std"][0].name);
-
 
 
                     }
