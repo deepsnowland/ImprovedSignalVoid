@@ -26,21 +26,33 @@ namespace ImprovedSignalVoid
             public static void Postfix()
             {
 
+
                 GameObject pvPrefab = GameObject.Find("GEAR_SignalVoidPvCollectible1");
                 GameObject sideTale1 = GameObject.Find("sideTale1");
 
                 if(sideTale1 != null)
                 {
+
                     MessageRouter msgRouter = sideTale1.GetComponent<MessageRouter>();
+
+                    if(msgRouter == null)
+                    {
+                        MelonLogger.Msg("Message Router is null");
+                        return;
+                    }
 
                     if (msgRouter.listeners.ContainsKey("OnCustomEvent"))
                     {
                         Il2CppSystem.Collections.Generic.List<Il2CppSystem.Object> list = msgRouter.listeners["OnCustomEvent"];
+
                         Condition_PlayerHasInventoryItems condition = (Condition_PlayerHasInventoryItems)list[0];
-                        Il2CppSystem.Collections.Generic.List<InventoryItemRequirement> invReqs = condition.requirementsDict["_std"];
-                        InventoryItemRequirement itemReq = invReqs[0];
-                        itemReq.item = pvPrefab.GetComponent<GearItem>();
-                        itemReq.name = "GEAR_SignalVoidPvCollectible1";
+                        MelonLogger.Msg("Has inventory item condition is: {0}", condition);
+                        condition.requirementsDict["_std"][0].item = pvPrefab.GetComponent<GearItem>();
+                        condition.requirementsDict["_std"][0].name = "GEAR_SignalVoidPvCollectible1";
+                    }
+                    else
+                    {
+                        MelonLogger.Msg("Unable to find key/value");
                     }
 
                 }
