@@ -17,10 +17,6 @@ namespace ImprovedSignalVoid
     internal class MissionPatches : MonoBehaviour
     {
 
-    
-    
-
-
         [HarmonyPatch(typeof(SaveGameSystem), nameof(SaveGameSystem.LoadSceneData))]
 
         internal class InventoryCheckOverride
@@ -323,7 +319,11 @@ namespace ImprovedSignalVoid
             {
                 GameObject EssentialHUD = __instance.gameObject.transform.GetChild(3).gameObject;
                 GameObject MissionPopup = EssentialHUD.transform.GetChild(11).gameObject;
-                MissionPopup.SetActive(false);
+
+                if (!Settings.settings.enabledMissionPopups)
+                {
+                    MissionPopup.SetActive(false);
+                }
             }
 
         }
