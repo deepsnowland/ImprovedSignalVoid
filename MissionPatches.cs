@@ -11,12 +11,15 @@ using ModSettings;
 using UnityEngine;
 using Il2CppParadoxNotion.Services;
 using Il2CppNodeCanvas.Tasks.Conditions;
-using Il2CppMissionTypes;
 
 namespace ImprovedSignalVoid
 {
-    internal class MissionPatches
+    internal class MissionPatches : MonoBehaviour
     {
+
+    
+    
+
 
         [HarmonyPatch(typeof(SaveGameSystem), nameof(SaveGameSystem.LoadSceneData))]
 
@@ -28,12 +31,12 @@ namespace ImprovedSignalVoid
 
                 GameObject sideTale1 = GameObject.Find("sideTale1");
 
-                if(sideTale1 != null)
+                if (sideTale1 != null)
                 {
 
                     MessageRouter msgRouter = sideTale1.GetComponent<MessageRouter>();
 
-                    if(msgRouter == null)
+                    if (msgRouter == null)
                     {
                         MelonLogger.Msg("Message Router is null");
                         return;
@@ -45,7 +48,7 @@ namespace ImprovedSignalVoid
 
                         Condition_PlayerHasInventoryItems condition = list[0].Cast<Condition_PlayerHasInventoryItems>();
 
-                       // condition.requirementsDict["_std"][0].item = pvPrefab.GetComponent<GearItem>();
+                        // condition.requirementsDict["_std"][0].item = pvPrefab.GetComponent<GearItem>();
                         condition.requirementsDict["_std"][0].name = "GEAR_SignalVoidPvCollectible1";
 
 
@@ -69,7 +72,7 @@ namespace ImprovedSignalVoid
 
         internal class JournalMissionTabDisplay
         {
-           
+
             private static void Postfix(Panel_Log __instance)
             {
 
@@ -93,7 +96,7 @@ namespace ImprovedSignalVoid
                         }
                     }
 
-                    if(navbarNormal != null && navbarTale != null)
+                    if (navbarNormal != null && navbarTale != null)
                     {
                         navbarTale.SetActive(false);
                         navbarNormal.SetActive(true);
@@ -103,7 +106,7 @@ namespace ImprovedSignalVoid
                     {
                         MelonLogger.Msg("Can't find navbar objects in log");
                     }
-                    
+
 
                 }
                 else

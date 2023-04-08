@@ -1,0 +1,15 @@
+scene=LakeRegion
+item=GEAR_SignalVoidMlCollectible1 p=790.2838,214.1351,969.5952 r=-0.0000,181.3533,0.0000 c=100
+item=GEAR_HandheldShortwave p=790.4413,214.2298,969.7495 r=-0.0000,15.5771,-0.0000 c=100
+
+scene=RadioControlHut
+item=GEAR_SignalVoidPvCollectible1 p=-3.5510,1.7619,-3.6301 r=90.0000,359.9510,0.0000 c=100
+item=GEAR_HandheldShortwave p=-3.1964,1.2812,-3.4787 r=-0.0000,169.7083,0.0000 c=100
+
+scene=WhalingWarehouseA
+item=GEAR_SignalVoidDpCollectible1 p=3.4421,4.9447,-12.3929 r=-0.0000,7.2521,-0.0000 c=100
+item=GEAR_HandheldShortwave p=3.2704,4.9447,-12.5550 r=0.0000,355.2985,0.0000 c=100
+
+scene=BlackrockInteriorASurvival
+item=GEAR_SignalVoidBrCollectible1 p=1.5349,4.7472,-20.2825 r=0.0000,277.7686,0.0000 c=100
+item=GEAR_HandheldShortwave p=1.6774,4.7407,-20.5018 r=0.0000,358.3984,0.0000 c=100
