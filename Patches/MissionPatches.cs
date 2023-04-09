@@ -11,8 +11,9 @@ using ModSettings;
 using UnityEngine;
 using Il2CppParadoxNotion.Services;
 using Il2CppNodeCanvas.Tasks.Conditions;
+using ImprovedSignalVoid.GearSpawns;
 
-namespace ImprovedSignalVoid
+namespace ImprovedSignalVoid.Patches.Patches
 {
     internal class MissionPatches : MonoBehaviour
     {
@@ -44,10 +45,30 @@ namespace ImprovedSignalVoid
 
                         Condition_PlayerHasInventoryItems condition = list[0].Cast<Condition_PlayerHasInventoryItems>();
 
-                        // condition.requirementsDict["_std"][0].item = pvPrefab.GetComponent<GearItem>();
-                        condition.requirementsDict["_std"][0].name = "GEAR_SignalVoidPvCollectible1";
+                        string item = null;
+                        SaveDataManager sdm = new SaveDataManager();
+                        string scene = sdm.LoadTaleStartRegion("startRegion");
 
 
+                        switch (scene)
+                        {
+                            case "LakeRegion":
+                                item = "GEAR_SignalVoidMlCollectible1";
+                                break;
+                            case "RadioControlHut":
+                                item = "GEAR_SignalVoidPvCollectible1";
+                                break;
+                            case "WhalingWarehouseA":
+                                item = "GEAR_SignalVoidDpCollectible1";
+                                break;
+                            case "BlackrockInteriorASurvival":
+                                item = "GEAR_SignalVoidBrCollectible1";
+                                break;
+                            case "AirfieldRegion":
+                                return;
+                        }
+
+                            condition.requirementsDict["_std"][0].name = item;
                     }
                     else
                     {
@@ -55,13 +76,21 @@ namespace ImprovedSignalVoid
                     }
 
                 }
-                else
-                {
-                    MelonLogger.Msg("Unable to find sideTale1");
-                }
-
             }
 
+        }
+
+        [HarmonyPatch(typeof(Panel_MissionsStory), nameof(Panel_MissionsStory.Update))]
+
+        internal class MissionsTabDeactivate
+        {
+            private static void Prefix(Panel_MissionsStory __instance)
+            {
+                if (!Settings.settings.enabledMissionTab)
+                {
+                    __instance.gameObject.SetActive(false);
+                }
+            }
         }
 
         [HarmonyPatch(typeof(Panel_Log), nameof(Panel_Log.Update))]
@@ -105,11 +134,6 @@ namespace ImprovedSignalVoid
 
 
                 }
-                else
-                {
-                    MelonLogger.Msg("debug");
-                }
-
             }
 
         }

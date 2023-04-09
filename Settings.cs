@@ -25,6 +25,11 @@ namespace ImprovedSignalVoid
         [Choice("Forsaken Airfield", "Pleasant Valley", "Desolation Point", "Mystery Lake", "Blackrock", "Random")]
         public int shortwaveRegion = 5;
 
+        [Name("Default Shortwave Location")]
+        [Description("Choose whether the Handheld Shortwave will be available in it's default location if you chose random.")]
+        [Choice("Yes", "No")]
+        public bool airfieldRegionAvailable = false;
+
         [Section("Tale Settings")]
 
         [Name("Journal Missions")]
@@ -37,16 +42,9 @@ namespace ImprovedSignalVoid
         [Choice("Disabled", "Enabled")]
         public bool enabledMissionPopups = true;
 
-        [Name("Enable All Bunkers")]
-        [Description("Enables Bunker Omega in Forsaken Airfield even if you haven't completed the other objectives in the Tale yet.")]
-        [Choice("Disabled", "Enabled")]
-        public bool enableBunkerOmega = false;
-
         protected override void OnChange(FieldInfo field, object oldValue, object newValue)
         {
-            if (field.Name == nameof(enabledMissionTab) ||
-               field.Name == nameof(enabledMissionPopups) ||
-               field.Name == nameof(enableBunkerOmega))
+            if (field.Name == nameof(shortwaveRegion))
             {
                 RefreshSections();
             }
@@ -54,7 +52,7 @@ namespace ImprovedSignalVoid
 
         internal void RefreshSections()
         {
-            SetFieldVisible(nameof(enableBunkerOmega), Settings.settings.enabledMissionTab != true && Settings.settings.enabledMissionPopups != true);
+            SetFieldVisible(nameof(airfieldRegionAvailable), Settings.settings.shortwaveRegion == 5);
         }
 
     }
