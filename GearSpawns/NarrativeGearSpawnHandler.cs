@@ -13,13 +13,15 @@ namespace ImprovedSignalVoid.GearSpawns
         public override bool ShouldSpawn(DifficultyLevel difficultyLevel, FirearmAvailability firearmAvailability, GearSpawnInfo gearSpawnInfo)
         {
 
-            MelonLogger.Msg("Checking if items should spawn");
 
             string scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
+            MelonLogger.Msg("Handler: Current scene: {0}", scene);
+
             SaveDataManager sdm = new SaveDataManager();
 
-            if(scene == sdm.LoadTaleStartRegion("startRegion"))
+            MelonLogger.Msg("Getting region from mod data to set item spawns");
+            if (scene == sdm.LoadTaleStartRegion("startRegion"))
             {
                 return true;
             }

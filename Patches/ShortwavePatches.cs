@@ -91,13 +91,14 @@ namespace ImprovedSignalVoid.Patches.Patches
             }
         }
 
-        [HarmonyPatch(typeof(SaveGameSystem), nameof(SaveGameSystem.LoadSceneData))]
+        [HarmonyPatch(typeof(QualitySettingsManager), nameof(QualitySettingsManager.ApplyCurrentQualitySettings))]
 
         internal class ShortwaveInAirfieldSceneManager
         {
             private static void Postfix()
             {
                 SaveDataManager sdm = new SaveDataManager();
+                MelonLogger.Msg("Getting region from mod data to set Airfield item availability");
                 string taleScene = sdm.LoadTaleStartRegion("startRegion");
 
                 for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)
@@ -152,6 +153,7 @@ namespace ImprovedSignalVoid.Patches.Patches
 
                                 if (!scene.name.Contains(taleScene))
                                 {
+                                    MelonLogger.Msg("Scene to start Tale is NOT Airfield");
                                     tales.transform.GetChild(0).gameObject.SetActive(false);
                                 }
                                

@@ -56,9 +56,16 @@ namespace ImprovedSignalVoid.GearSpawns
 
                 }
 
+                MelonLogger.Msg("Region being saved: {0}", regionToSave);
+
                 Save(regionToSave, suffix);
                 region = regionToSave;
             }
+            else
+            {
+                MelonLogger.Msg("Region being loaded: {0}", region);
+            }
+
 
             return region;
         }

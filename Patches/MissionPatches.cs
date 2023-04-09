@@ -80,19 +80,6 @@ namespace ImprovedSignalVoid.Patches.Patches
 
         }
 
-        [HarmonyPatch(typeof(Panel_MissionsStory), nameof(Panel_MissionsStory.Update))]
-
-        internal class MissionsTabDeactivate
-        {
-            private static void Prefix(Panel_MissionsStory __instance)
-            {
-                if (!Settings.settings.enabledMissionTab)
-                {
-                    __instance.gameObject.SetActive(false);
-                }
-            }
-        }
-
         [HarmonyPatch(typeof(Panel_Log), nameof(Panel_Log.Update))]
 
         internal class JournalMissionTabDisplay
@@ -338,7 +325,6 @@ namespace ImprovedSignalVoid.Patches.Patches
         [HarmonyPatch(typeof(Panel_HUD), nameof(Panel_HUD.Update))]
         internal class HUDMissionPopupDisplay
         {
-
             private static void Postfix(Panel_HUD __instance)
             {
                 GameObject EssentialHUD = __instance.gameObject.transform.GetChild(3).gameObject;
@@ -349,8 +335,23 @@ namespace ImprovedSignalVoid.Patches.Patches
                     MissionPopup.SetActive(false);
                 }
             }
-
         }
 
+        [HarmonyPatch(typeof(Panel_Log), nameof(Panel_Log.EnterState))]
+
+        internal class MissionTabDeactivate
+        {
+            private static void Prefix(Panel_Log __instance, ref PanelLogState newState)
+            {
+                if (!Settings.settings.enabledMissionTab)
+                {
+                    if(newState == PanelLogState.Missions)
+                    {
+                        __instance.m_NavigationTabState = Panel_Log.NavigationTabState.Journal;
+                        newState = PanelLogState.DayListStats;
+                    }
+                }
+            }
+        }
     }
 }
