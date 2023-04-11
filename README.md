@@ -21,6 +21,8 @@ This mod REPLACES Signal Void Interloper. That mod is now deprecated. If you hav
 - [GearSpawner](https://github.com/dommrogers/GearSpawner/releases/latest)
 - [ModComponent](https://github.com/dommrogers/ModComponent/releases/latest) (and it's dependencies)
 
+* Install ImprovedSignalVoid.dll and improvedsignalvoid.modcomponent in your mods folder
+
 ## Issues
 
 If you encounter any issues with the mod please inform me! I tested thoroughly but cannot test everything. So please let me know if you find any issues.
