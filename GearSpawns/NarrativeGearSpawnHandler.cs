@@ -18,7 +18,6 @@ namespace ImprovedSignalVoid.GearSpawns
 
             SaveDataManager sdm = Implementation.sdm;
 
-            MelonLogger.Msg("GETTING REGION FROM MOD DATA TO SET ITEM SPAWNS");
             if (scene == sdm.LoadTaleStartRegion("startRegion"))
             {
                 return true;

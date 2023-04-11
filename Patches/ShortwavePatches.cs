@@ -148,10 +148,19 @@ namespace ImprovedSignalVoid.Patches.Patches
 
         internal class ShortwaveInAirfieldSceneManager
         {
+
+
             private static void Postfix()
             {
+
+                string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+                if (currentScene.Contains("MainMenu") || currentScene == "" || currentScene == null)
+                {
+                    return;
+                }
+
                 SaveDataManager sdm = Implementation.sdm;
-                MelonLogger.Msg("GETTING REGION FROM MOD DATA TO SET AIRFIELD SPAWNS");
                 string taleScene = sdm.LoadTaleStartRegion("startRegion");
 
                 for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)

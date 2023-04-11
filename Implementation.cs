@@ -13,8 +13,8 @@ namespace Main
 		public override void OnInitializeMelon()
 		{
 			MelonLogger.Msg("Improved Signal Void is online!");
-			ItemSpawnManager.InitializeCustomHandler();
-			Settings.OnLoad();
+            Settings.OnLoad();
+            ItemSpawnManager.InitializeCustomHandler();
 		}
 	}
 }

@@ -24,11 +24,10 @@ namespace ImprovedSignalVoid.GearSpawns
 
             if(region == null)
             {
-                MelonLogger.Msg("NO SAVE DATA. SAVING NEW DATA");
                 int regionToSaveInt = Settings.settings.shortwaveRegion;
                 string regionToSave = null;
 
-                if(regionToSaveInt == 5)
+                if (regionToSaveInt == 5)
                 {
                     regionToSaveInt = GetRandomRegion();
                 }
@@ -56,16 +55,10 @@ namespace ImprovedSignalVoid.GearSpawns
 
                 }
 
-                MelonLogger.Msg("REGION BEING SAVED AND LOADED: {0}", regionToSave);
-
                 Save(regionToSave, suffix);
                 region = regionToSave;
             }
-            else
-            {
-                MelonLogger.Msg("REGION BEING LOADED: {0}", region);
-            }
-
+            
             return region;
         }
 
