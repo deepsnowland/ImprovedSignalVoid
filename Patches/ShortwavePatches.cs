@@ -51,9 +51,6 @@ namespace ImprovedSignalVoid.Patches.Patches
 
                     if (sideTale1 != null)
                     {
-
-                        MelonLogger.Msg("FOUND SIDETALE1");
-
                         MessageRouter msgRouter = sideTale1.GetComponent<MessageRouter>();
 
                         if (msgRouter == null)
@@ -69,22 +66,8 @@ namespace ImprovedSignalVoid.Patches.Patches
                             Condition_PlayerHasInventoryItems condition = list[0].Cast<Condition_PlayerHasInventoryItems>();
 
                             condition.requirementsDict["_std"][0].name = gearItem;
-                        }
-                        else
-                        {
-                            MelonLogger.Msg("Unable to find key/value");
-                        }
-
+                        }  
                     }
-                    else
-                    {
-                        MelonLogger.Msg("CAN'T FIND SIDETALE1");
-
-                    }
-                }
-                else
-                {
-                    MelonLogger.Msg("Gear is not narrative trigger item");
                 }
             }
 
@@ -215,7 +198,6 @@ namespace ImprovedSignalVoid.Patches.Patches
 
                                 if (!scene.name.Contains(taleScene))
                                 {
-                                    MelonLogger.Msg("Scene to start Tale is NOT Airfield");
                                     tales.transform.GetChild(0).gameObject.SetActive(false);
                                 }
                                
