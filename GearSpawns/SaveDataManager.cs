@@ -11,7 +11,7 @@ namespace ImprovedSignalVoid.GearSpawns
     internal class SaveDataManager
     {
 
-        ModDataManager dm = new ModDataManager("Improved Signal Void");
+        ModDataManager dm = new ModDataManager("Improved Signal Void", false);
 
         public void Save(string data, string suffix)
         {
@@ -24,7 +24,7 @@ namespace ImprovedSignalVoid.GearSpawns
 
             if(region == null)
             {
-                MelonLogger.Msg("Couldn't find existing save data for Tale start region, saving from mod settings.");
+                MelonLogger.Msg("NO SAVE DATA. SAVING NEW DATA");
                 int regionToSaveInt = Settings.settings.shortwaveRegion;
                 string regionToSave = null;
 
@@ -56,16 +56,15 @@ namespace ImprovedSignalVoid.GearSpawns
 
                 }
 
-                MelonLogger.Msg("Region being saved: {0}", regionToSave);
+                MelonLogger.Msg("REGION BEING SAVED AND LOADED: {0}", regionToSave);
 
                 Save(regionToSave, suffix);
                 region = regionToSave;
             }
             else
             {
-                MelonLogger.Msg("Region being loaded: {0}", region);
+                MelonLogger.Msg("REGION BEING LOADED: {0}", region);
             }
-
 
             return region;
         }

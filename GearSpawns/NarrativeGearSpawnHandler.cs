@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using GearSpawner;
 using MelonLoader;
+using Main;
 
 namespace ImprovedSignalVoid.GearSpawns
 {
@@ -13,14 +14,11 @@ namespace ImprovedSignalVoid.GearSpawns
         public override bool ShouldSpawn(DifficultyLevel difficultyLevel, FirearmAvailability firearmAvailability, GearSpawnInfo gearSpawnInfo)
         {
 
-
             string scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
 
-            MelonLogger.Msg("Handler: Current scene: {0}", scene);
+            SaveDataManager sdm = Implementation.sdm;
 
-            SaveDataManager sdm = new SaveDataManager();
-
-            MelonLogger.Msg("Getting region from mod data to set item spawns");
+            MelonLogger.Msg("GETTING REGION FROM MOD DATA TO SET ITEM SPAWNS");
             if (scene == sdm.LoadTaleStartRegion("startRegion"))
             {
                 return true;

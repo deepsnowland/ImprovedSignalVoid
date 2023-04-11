@@ -18,18 +18,21 @@ namespace ImprovedSignalVoid.Patches.Patches
     internal class MissionPatches : MonoBehaviour
     {
 
+        //MAYBE RUN THIS ON INSPECT CHECK
         [HarmonyPatch(typeof(SaveGameSystem), nameof(SaveGameSystem.LoadSceneData))]
 
         internal class InventoryCheckOverride
         {
 
-            public static void Postfix()
+            /*public static void Postfix()
             {
 
                 GameObject sideTale1 = GameObject.Find("sideTale1");
 
                 if (sideTale1 != null)
                 {
+
+                    MelonLogger.Msg("FOUND SIDETALE1");
 
                     MessageRouter msgRouter = sideTale1.GetComponent<MessageRouter>();
 
@@ -76,7 +79,12 @@ namespace ImprovedSignalVoid.Patches.Patches
                     }
 
                 }
-            }
+                else
+                {
+                    MelonLogger.Msg("CAN'T FIND SIDETALE1");
+
+                }
+            } */
 
         }
 

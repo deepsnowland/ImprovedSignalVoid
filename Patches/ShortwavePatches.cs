@@ -10,6 +10,9 @@ using HarmonyLib;
 using System.Collections;
 using ImprovedSignalVoid.GearSpawns;
 using Il2CppTLD.Gameplay.Tunable;
+using Il2CppNodeCanvas.Tasks.Conditions;
+using Il2CppParadoxNotion.Services;
+using Main;
 
 namespace ImprovedSignalVoid.Patches.Patches
 {
@@ -30,11 +33,61 @@ namespace ImprovedSignalVoid.Patches.Patches
                 {
                     if (__instance.m_InspectModeActive)
                     {
+                        SetTriggerItem(__instance.m_Gear.name);
                         shortwaveFPH.SetActive(true);
                     }
                 }
 
             }
+
+            private static void SetTriggerItem(string gearItem)
+            {
+
+                if (gearItem.Contains("Tale1ChiefNote1")) return;
+
+                if (gearItem.Contains("GEAR_SignalVoid"))
+                {
+                    GameObject sideTale1 = GameObject.Find("sideTale1");
+
+                    if (sideTale1 != null)
+                    {
+
+                        MelonLogger.Msg("FOUND SIDETALE1");
+
+                        MessageRouter msgRouter = sideTale1.GetComponent<MessageRouter>();
+
+                        if (msgRouter == null)
+                        {
+                            MelonLogger.Msg("Message Router is null");
+                            return;
+                        }
+
+                        if (msgRouter.listeners.ContainsKey("OnCustomEvent"))
+                        {
+                            var list = msgRouter.listeners["OnCustomEvent"];
+
+                            Condition_PlayerHasInventoryItems condition = list[0].Cast<Condition_PlayerHasInventoryItems>();
+
+                            condition.requirementsDict["_std"][0].name = gearItem;
+                        }
+                        else
+                        {
+                            MelonLogger.Msg("Unable to find key/value");
+                        }
+
+                    }
+                    else
+                    {
+                        MelonLogger.Msg("CAN'T FIND SIDETALE1");
+
+                    }
+                }
+                else
+                {
+                    MelonLogger.Msg("Gear is not narrative trigger item");
+                }
+            }
+
         }
 
         [HarmonyPatch(typeof(PlayerManager), nameof(PlayerManager.ProcessPickupItemInteraction))]
@@ -97,8 +150,8 @@ namespace ImprovedSignalVoid.Patches.Patches
         {
             private static void Postfix()
             {
-                SaveDataManager sdm = new SaveDataManager();
-                MelonLogger.Msg("Getting region from mod data to set Airfield item availability");
+                SaveDataManager sdm = Implementation.sdm;
+                MelonLogger.Msg("GETTING REGION FROM MOD DATA TO SET AIRFIELD SPAWNS");
                 string taleScene = sdm.LoadTaleStartRegion("startRegion");
 
                 for (int i = 0; i < UnityEngine.SceneManagement.SceneManager.sceneCount; i++)

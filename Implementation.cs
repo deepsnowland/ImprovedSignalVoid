@@ -3,13 +3,18 @@ using ImprovedSignalVoid.GearSpawns;
 using MelonLoader;
 using ModSettings;
 
-namespace ModNamespace;
-internal sealed class Implementation : MelonMod
+namespace Main
 {
-	public override void OnInitializeMelon()
+	public sealed class Implementation : MelonMod
 	{
-		MelonLogger.Msg("Improved Signal Void is online!");
-		ItemSpawnManager.InitializeCustomHandler();
-        Settings.OnLoad();
-    }
+
+		internal static SaveDataManager sdm = new SaveDataManager();
+
+		public override void OnInitializeMelon()
+		{
+			MelonLogger.Msg("Improved Signal Void is online!");
+			ItemSpawnManager.InitializeCustomHandler();
+			Settings.OnLoad();
+		}
+	}
 }
