@@ -83,6 +83,14 @@ namespace ImprovedSignalVoid.Patches.Patches
             private static void Postfix(PlayerManager __instance)
             {
 
+                string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+                /*
+                MelonLogger.Msg("Current scene is: {0}", currentScene);
+                MelonLogger.Msg("Player Manager is {0}", __instance);
+                MelonLogger.Msg("Player Manager Gear Item is {0}", __instance.m_Gear.name);
+                */
+
                 GameObject rig = GameObject.Find("CHARACTER_FPSPlayer/NEW_FPHand_Rig/GAME_DATA/Origin/HipJoint/Chest_Joint/Camera_Weapon_Offset/Shoulder_Joint/Shoulder_Joint_Offset/Right_Shoulder_Joint_Offset/RightClavJoint/RightShoulderJoint/RightElbowJoint/RightWristJoint/RightPalm/right_prop_point");
                 GameObject shortwaveFPH = rig.transform.GetChild(16).gameObject;
 
@@ -118,6 +126,9 @@ namespace ImprovedSignalVoid.Patches.Patches
 
                 //Removes collider from object so only the collectible can be interacted with
                 GameObject shortwaveActual = GameObject.Find("GEAR_HandheldShortwave");
+
+                if(shortwaveActual == null) return;
+
                 BoxCollider bc = shortwaveActual.GetComponent<BoxCollider>();
                 if (bc) Destroy(bc);
 
