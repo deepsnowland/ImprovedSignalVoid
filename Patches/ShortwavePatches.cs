@@ -29,6 +29,8 @@ namespace ImprovedSignalVoid.Patches.Patches
                 GameObject rig = GameObject.Find("CHARACTER_FPSPlayer/NEW_FPHand_Rig/GAME_DATA/Origin/HipJoint/Chest_Joint/Camera_Weapon_Offset/Shoulder_Joint/Shoulder_Joint_Offset/Right_Shoulder_Joint_Offset/RightClavJoint/RightShoulderJoint/RightElbowJoint/RightWristJoint/RightPalm/right_prop_point");
                 GameObject shortwaveFPH = rig.transform.GetChild(16).gameObject;
 
+                if (__instance == null || __instance.m_Gear == null) return;
+
                 if (__instance.m_Gear.name.Contains("GEAR_SignalVoid"))
                 {
                     if (__instance.m_InspectModeActive)
