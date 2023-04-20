@@ -1,4 +1,4 @@
-x{
+{
     "FUAR_SignalVoidDpCollectible1Title": {
         "English": "Hibernia Communications Update"
     },
@@ -8,7 +8,7 @@ x{
     },
 
     "FUAR_SignalVoidDpCollectible1Text":{
-        "English": "As you all know, communication with the lighthouse and our/any ships has been lackluster these last few years. Ever since the Riken ended up on the rocks we've been losing business. \n\nSo we finally got the technicians to come in and repair the our communication relay. The lighthouse workers and anyone on our crew should now be equipped with handheld radios to ensure communication remains between each of us at all times to prevent any events like last summer's. \n\nThose of you who've already picked up your communications gear may notice some interference patterns around the lower coast. I sent John out up the road on a routine run to Quincy's to check it out. If it gets worse and is impacting any at-sea activity, please let one of us know. \n\nRegards, \nRichard Brown \nHibernia On-Site Operations Supervisor"
+        "English": "As you all know, communication with the lighthouse and our/any ships has been lackluster these last few years. Ever since the Riken ended up on the rocks we've been losing business. \n\nIn light of this, we finally got the technicians to come in and repair the our communication relay. The lighthouse workers and anyone on our crew should now be equipped with handheld radios to ensure communication remains between each of us at all times to prevent any events like last summer's. \n\nThose of you who've already picked up your communications gear may notice some interference patterns around the lower coast. I sent John out up the road on a routine run to Quincy's to check it out. If it gets worse and is impacting any at-sea activity, please let one of us know. \n\nRegards, \nRichard Brown \nHibernia On-Site Operations Supervisor"
     },
 
     "FUAR_SignalVoidPvCollectible1Title":{

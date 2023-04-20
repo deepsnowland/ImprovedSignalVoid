@@ -208,40 +208,15 @@ namespace ImprovedSignalVoid.Patches.Patches
 
                             if (tales != null)
                             {
-
-                                if (ExperienceModeManager.GetCurrentExperienceModeType() == ExperienceModeType.Interloper || (ExperienceModeManager.GetCurrentExperienceModeType() == ExperienceModeType.Custom
-                                   && GameManager.GetCustomMode().m_BaseWorldDifficulty == CustomTunableLMHV.Low))
-                                {
-                                    DisableObjectForXPMode component = tales.GetComponent<DisableObjectForXPMode>();
-                                    Destroy(component);
-                                }
-
                                 if (!scene.name.Contains(taleScene))
                                 {
                                     tales.transform.GetChild(0).gameObject.SetActive(false);
                                 }
-                               
                             }
                             else
                             {
                                 MelonLogger.Msg("Unable to find tales object in scene");
                             }
-
-                            if (trackables != null)
-                            {
-
-                                if (ExperienceModeManager.GetCurrentExperienceModeType() == ExperienceModeType.Interloper || (ExperienceModeManager.GetCurrentExperienceModeType() == ExperienceModeType.Custom
-                                && GameManager.GetCustomMode().m_BaseWorldDifficulty == CustomTunableLMHV.Low))
-                                {
-                                    DisableObjectForXPMode component = trackables.GetComponent<DisableObjectForXPMode>();
-                                    Destroy(component);
-                                }
-                            }
-                            else
-                            {
-                                MelonLogger.Msg("Unable to find trackables object in scene");
-                            }
-
                         }
 
                     }
