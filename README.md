@@ -5,7 +5,6 @@ Improved Signal Void is a mod for The Long Dark that aims to improve the Signal 
 * Four new spawn locations for the Handheld Shortwave. These act as new starting locations for the Tale. Configurable in Mod Settings menu and is permanent on a new save.
 * New narrative collectibles to accompany the new starting locations
 * GUI options for disabling the Journal tab and mission popups on screen
-* Signal Void availability in Interloper difficulty
 
 ## Note
 
