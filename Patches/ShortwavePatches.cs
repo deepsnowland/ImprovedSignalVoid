@@ -134,7 +134,10 @@ namespace ImprovedSignalVoid.Patches.Patches
                 //Removes collider from object so only the collectible can be interacted with
                 GameObject shortwaveActual = GameObject.Find("GEAR_HandheldShortwave");
 
-                if(shortwaveActual == null) return;
+                if (shortwaveActual == null) return;
+
+                //If the shortwave is a Gear Item in DDOL. Get out of here
+                if (shortwaveActual.transform.parent != null) return;
 
                 BoxCollider bc = shortwaveActual.GetComponent<BoxCollider>();
                 if (bc) Destroy(bc);
@@ -142,7 +145,7 @@ namespace ImprovedSignalVoid.Patches.Patches
                 Inventory inv = GameManager.GetInventoryComponent();
                 if (inv.GetBestGearItemWithName("GEAR_HandheldShortwave"))
                 {
-                    shortwaveActual.SetActive(false);
+                   shortwaveActual.SetActive(false);
                 }
             }
         }
