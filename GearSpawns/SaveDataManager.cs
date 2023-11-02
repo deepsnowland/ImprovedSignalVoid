@@ -18,6 +18,17 @@ namespace ImprovedSignalVoid.GearSpawns
             dm.Save(data, suffix);
         }
 
+        public bool HasPickedUpShortwave ()
+        {
+            string? hasPickedUpShortwave = dm.Load("hasPickedUpShortwave");
+
+            if (hasPickedUpShortwave == null)
+            {
+                return false;
+            }
+            else return true;
+        }
+
         public string LoadTaleStartRegion(string suffix)
         {
             string? region = dm.Load(suffix);

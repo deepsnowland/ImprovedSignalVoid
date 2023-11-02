@@ -30,7 +30,6 @@ namespace ImprovedSignalVoid.Patches.Patches
 
                 if(rig == null)
                 {
-                    MelonLogger.Msg("Rig is null");
                     return;
                 }
 
@@ -133,6 +132,9 @@ namespace ImprovedSignalVoid.Patches.Patches
             private static void Postfix()
             {
 
+                SaveDataManager sdm = Implementation.sdm;
+                if (sdm.HasPickedUpShortwave()) return;
+
                 //Removes collider from object so only the collectible can be interacted with
                 GameObject shortwaveActual = GameObject.Find("GEAR_HandheldShortwave");
 
@@ -144,9 +146,11 @@ namespace ImprovedSignalVoid.Patches.Patches
                 BoxCollider bc = shortwaveActual.GetComponent<BoxCollider>();
                 if (bc) Destroy(bc);
 
+                //remove the shortwave from the scene after picking it up
                 Inventory inv = GameManager.GetInventoryComponent();
                 if (inv.GetBestGearItemWithName("GEAR_HandheldShortwave"))
                 {
+                   sdm.Save("true", "hasPickedUpShortwave");
                    shortwaveActual.SetActive(false);
                 }
             }
