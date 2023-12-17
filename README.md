@@ -1,6 +1,8 @@
-# Improved Signal Void
+# Improved Tales
 
-Improved Signal Void is a mod for The Long Dark that aims to improve the Signal Void Tale by adding some quality of life improvements to the GUI and flow of the Tale. 
+Improved Tales is a mod for The Long Dark that aims to improve the tales by adding some quality of life improvements to the GUI and flow. 
+
+Currently it only affects Signal Void
 
 * Four new spawn locations for the Handheld Shortwave. These act as new starting locations for the Tale. Configurable in Mod Settings menu and is permanent on a new save.
 * New narrative collectibles to accompany the new starting locations
