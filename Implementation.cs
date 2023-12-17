@@ -12,7 +12,7 @@ namespace Main
 
 		public override void OnInitializeMelon()
 		{
-			MelonLogger.Msg("Improved Signal Void is online!");
+			MelonLogger.Msg("Improved Tales is online!");
             Settings.OnLoad();
             ItemSpawnManager.InitializeCustomHandler();
 		}

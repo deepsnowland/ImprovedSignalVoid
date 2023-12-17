@@ -15,11 +15,11 @@ using System.Reflection;
 
 internal static class BuildInfo
 {
-	internal const string ModName = "ImprovedSignalVoid";
+	internal const string ModName = "ImprovedTales";
 	internal const string ModAuthor = "Fuar";
 	/// <summary>
 	/// Version numbers in C# are a set of 1 to 4 positive integers separated by periods.
 	/// Mods typically use 3 numbers. For example: 1.2.1
 	/// </summary>
-	internal const string ModVersion = "1.0.6";
+	internal const string ModVersion = "1.1.0";
 }

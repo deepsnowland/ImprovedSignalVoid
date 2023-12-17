@@ -34,7 +34,8 @@
 	<!--This is the of packages that the mod references.-->
 	<ItemGroup>
 		<!--This package contains almost everything a person could possibly need to reference while modding.-->
-		<PackageReference Include="stblade.Modding.TLD.Il2CppAssemblies.Windows" Version="2.23.0" />
+		<PackageReference Include="stblade.Modding.TLD.Il2CppAssemblies.Windows" Version="2.25.0" />
+		<PackageReference Include="STBlade.Modding.TLD.ModComponent" Version="6.2.3" />
 		<PackageReference Include="stblade.Modding.TLD.ModSettings" Version="1.9.0" />
 		<PackageReference Include="stblade.Modding.TLD.GearSpawner" Version="2.3.1" />
 		<PackageReference Include="stblade.Modding.TLD.ModData" Version="1.5.1" />

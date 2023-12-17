@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImprovedSignalVoid", "ImprovedSignalVoid.csproj", "{4842B6BC-6B04-4C75-9BEE-5DE1DE183D8E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImprovedTales", "ImprovedTales.csproj", "{4842B6BC-6B04-4C75-9BEE-5DE1DE183D8E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

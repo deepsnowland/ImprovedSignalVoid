@@ -63,7 +63,7 @@ namespace ImprovedSignalVoid
         internal static void OnLoad()
         {
             settings = new CustomSettings();
-            settings.AddToModSettings("Improved Signal Void", MenuType.Both);
+            settings.AddToModSettings("Improved Tales", MenuType.Both);
             settings.RefreshSections();
         }
     }
